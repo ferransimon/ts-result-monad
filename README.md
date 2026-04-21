@@ -5,11 +5,11 @@ A lightweight, fully-typed `Result` monad for TypeScript. Model success and fail
 ## Installation
 
 ```sh
-npm install @nomis/ts-result-monad
+npm install @fnomisdev/ts-result-monad
 # or
-pnpm add @nomis/ts-result-monad
+pnpm add @fnomisdev/ts-result-monad
 # or
-yarn add @nomis/ts-result-monad
+yarn add @fnomisdev/ts-result-monad
 ```
 
 ## Usage
@@ -17,7 +17,7 @@ yarn add @nomis/ts-result-monad
 ### Creating a Result
 
 ```ts
-import { Result } from '@nomis/ts-result-monad'
+import { Result } from '@fnomisdev/ts-result-monad'
 
 const success = Result.success(42)
 const failure = Result.failure(new Error('something went wrong'))
@@ -122,7 +122,7 @@ swapped.orElseThrow() // Error: oops
 
 ```tsx
 import { useState, useEffect } from 'react'
-import { Result } from '@nomis/ts-result-monad'
+import { Result } from '@fnomisdev/ts-result-monad'
 
 type RawUser = { id: number; first_name: string; last_name: string; email: string }
 type User = { id: number; name: string; email: string }
