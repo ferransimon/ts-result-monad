@@ -1,0 +1,29 @@
+name: 🚀 Release
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - 'CHANGELOG.md'
+      - '.changeset/**'
+  workflow_dispatch:
+
+concurrency: ${{ github.workflow }}-${{ github.ref }}
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version-file: '.nvmrc'
+      - uses: pnpm/action-setup@v6
+        with:
+          cache: true
+      - run: pnpm install
+      - run: pnpm run build
+      - uses: changesets/action@v1
+        with:
+          publish: 'pnpm run release'

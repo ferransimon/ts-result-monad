@@ -1,0 +1,35 @@
+{
+	"name": "@nomis/ts-result-monad",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"type": "module",
+	"scripts": {
+		"test": "vitest run",
+		"format": "biome format --write",
+		"lint": "biome lint",
+		"build": "tsc -p tsconfig.build.json",
+		"changeset": "changeset",
+		"release": "changeset publish"
+	},
+	"files": [
+		"dist"
+	],
+	"exports": {
+		".": {
+			"import": "./dist/Result.js",
+			"require": "./dist/Result.js",
+			"types": "./dist/Result.d.ts"
+		}
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"packageManager": "pnpm@10.33.0",
+	"devDependencies": {
+		"@biomejs/biome": "2.4.12",
+		"@changesets/cli": "^2.31.0",
+		"typescript": "^6.0.3",
+		"vitest": "^4.1.5"
+	}
+}
